@@ -9,7 +9,6 @@ LL::LL() {
 }
 
 // Copy constructor
-// Not sure how to see if it's working
 LL::LL(const LL& A) {
  Node* cursorA = NULL;
  Node* cursor = NULL;
@@ -26,7 +25,7 @@ LL::LL(const LL& A) {
 }
 
 // Destructor
-// Is this identical to the clear function?
+// Identical to clear function..
 LL::~LL() {
  Node* cursor = head;
  while(cursor!=NULL) {
@@ -38,7 +37,6 @@ LL::~LL() {
 }
 
 // Assignment operator overload
-// Segmentation fault error
 LL& LL::operator=(const LL& A) {
  if(this == &A) return *this;
  else {
@@ -58,7 +56,6 @@ LL& LL::operator=(const LL& A) {
   }
   return *this;
  } 
-
 }
 
 // Insert BEFORE current ith node in list. [1st node is at index 0,
@@ -87,7 +84,7 @@ void LL::insert(char c,unsigned int i) {
  }
 }
 
-// Remove the ith node in list, return the removed char
+// Remove the ith node in list, return the removed char.
 char LL::remove(unsigned int i) {
  if (i==1) {
   Node* cursor;
@@ -136,9 +133,7 @@ unsigned int LL::size() const {
  return size;
 }
 
-// Clear the list by deallocating all of the nodes and setting head to
-// NULL 
-// ?? Is this the same as the destructor?
+// Clear the list by deallocating all of the nodes and setting head to NULL
 void LL::clear() {
  Node* cursor = head;
  while(cursor!=NULL) {
@@ -158,13 +153,13 @@ ostream& operator<<(ostream& out, const LL& A) {
  return out;
 }
 
-// returns true if the lists are equal char-by-char, false otherwise.
+// Returns true if the lists are equal char-by-char, false otherwise.
 bool operator==(const LL& A, const LL& B) {
  Node* A_cursor=A.head;
  Node* B_cursor=B.head;
- if (A.size()!=B.size()) {return false;}
+ if (A.size()!=B.size()) {return false;}  //If lengths are not equal, then not equal
  int i =0;
- for(int i=0;i<A.size();i++) {
+ for(int i=0;i<A.size();i++) {           //Otherwise, compare individual items in list
   if (A_cursor->get_data() == B_cursor->get_data()) {
    A_cursor=A_cursor->get_next();
    B_cursor=B_cursor->get_next();
@@ -173,5 +168,3 @@ bool operator==(const LL& A, const LL& B) {
  }
  return true;
 }
-
-
