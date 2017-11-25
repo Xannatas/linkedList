@@ -7,10 +7,10 @@ using namespace std;
 
 class LL {
   //Freind Declarations
-  // Print characters in LL
+  //Print characters in LL
   friend ostream& operator<<(ostream&, const LL&);
 
-  // returns true if the lists are equal char-by-char, false otherwise.
+  //Returns true if the lists are equal char-by-char, false otherwise.
   friend bool operator==(const LL&, const LL&);
  
   public:
@@ -39,11 +39,11 @@ class LL {
     // Return the current number of nodes in the list, 0 means empty.
     unsigned int size() const;
 
-    // Clear the list by deallocating all of the nodes and setting head to
-    // NULL
+    // Clear the list by deallocating all of the nodes and setting head to NULL
     void clear();
 
   private:
+    // Lists's head value
     Node *head;
 
 };
